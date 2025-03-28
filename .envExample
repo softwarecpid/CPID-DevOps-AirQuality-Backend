@@ -1,0 +1,5 @@
+DB_HOSTNAME=localhost
+DB_PORT=3306
+DB_PASSWORD=password 
+DB_USERNAME=root
+DB_NAME=name

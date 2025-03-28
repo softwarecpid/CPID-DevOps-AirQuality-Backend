@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    image: airquality_api
+    env_file: .env
+    ports:
+      - 18003:8003
+    networks:
+      - airquality
+
+networks:
+  airquality:
+    external: true
