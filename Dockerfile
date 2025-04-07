@@ -1,21 +1,21 @@
-# Using an official Python image as a base
+# Usando uma imagem Python como base
 FROM python:3.10
 
-# Set the working directory in the container
+# Escolhendo o diretório de trabalho
 WORKDIR /usr/src
 
-# Copy the requirements file to the container
+# Copiando requirements para o container
 COPY requirements.txt .
 
-# Install dependencies
+# Instalando dependências
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copying application files to the container
+# Copiando os arquivos restantes
 COPY . .
 
-# Set the working app directory in the container
+# Mudando o diretório de trabalho
 WORKDIR /usr/src/app
 
-# Command to start FastAPI server using Uvicorn
+# Rodando o servidor do FastAPI
 CMD ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "8003"]

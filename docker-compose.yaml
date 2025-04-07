@@ -1,13 +1,13 @@
 services:
-  api:
-    build: .
-    image: airquality_api
-    env_file: .env
+  api: # Nome do serviço
+    build: . # Localização da Dockerfile
+    image: airquality_api # Nome da imagem gerada após o build
+    env_file: .env # Localização das variáveis de ambiente
     ports:
-      - 18003:8003
+      - 18003:8003 # Bind de portas
     networks:
-      - airquality
+      - airquality # Nome da rede
 
 networks:
-  airquality:
-    external: true
+  airquality: # Declaração da rede
+    external: true # Rede já deve existir
