@@ -2,6 +2,7 @@ services:
   api: # Nome do serviço
     build: . # Localização da Dockerfile
     image: airquality_api # Nome da imagem gerada após o build
+    container_name: air-quality-backend # Nome do container
     env_file: .env # Localização das variáveis de ambiente
     ports:
       - 18003:8003 # Bind de portas
